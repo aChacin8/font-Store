@@ -1,0 +1,47 @@
+header {
+  background-color: rgb(167, 124, 150);
+  padding: 20px;
+  margin: auto;
+}
+
+main {
+  display: flex;
+}
+
+#section-r {
+  background-color: aqua;
+  width: 65%;
+}
+
+#product-div {
+  background-color: rgb(53, 125, 127);
+  text-align: center;
+  margin: 10px 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#product-ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+    margin-right: 3rem;
+}
+
+#product-li {
+  background-color: cadetblue;
+  padding: 1rem;
+  margin: 5px;
+  display: flex;
+}
+
+img {
+  height: 8rem;
+  width: 10rem;
+  padding: 10px;
+  margin: auto;
+}
+
+
+
+
