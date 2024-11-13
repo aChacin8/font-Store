@@ -1,7 +1,38 @@
 header {
-  background-color: rgb(167, 124, 150);
-  padding: 20px;
+  background-color: rgba(101, 45, 45, 0.883);
+  padding: 15px;
+  height: 3rem;
+  width: 98%;
+  position: relative;
+  display: flex;
+}
+
+#nav_image {
+  width: 1.8rem;
+  height: 1.8rem;
   margin: auto;
+  display: flex;
+  margin-bottom: 0;
+}
+
+#log-a {
+  margin-right: 20px;
+  margin-left: 55rem;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  background-image: url('https://cdn.icon-icons.com/icons2/1993/PNG/512/account_avatar_face_man_people_profile_user_icon_123197.png');
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  background-position: 20px 16px;
+}
+
+#reg-a {
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  background-image: url('https://cdn.icon-icons.com/icons2/3478/PNG/512/register_login_signup_icon_219991.png');
+  background-repeat: no-repeat;
+  background-size: 1.8rem;
+  background-position: 12px 16px;
 }
 
 main {
@@ -9,43 +40,104 @@ main {
 }
 
 #section-r {
-  background-color: aqua;
   width: 65%;
+  background-color: rgba(194, 228, 165, 0.53);
 }
-
-#product-div {
-  background-color: rgb(53, 125, 127);
-  text-align: center;
-  margin: 10px 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
 #product-ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-    margin-right: 3rem;
+  margin-right: 3rem;
 }
 
 #product-li {
-  background-color: cadetblue;
   padding: 1rem;
-  margin: 5px;
+  background-color: rgba(210, 202, 109, 0.796);
+  text-align: center;
+  margin: 10px;
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+input {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://cdn.icon-icons.com/icons2/37/PNG/512/Search_find_3519.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding: 8px 15px 8px 30px;
+}
+
+
+.btn-shop {
+  margin: 20px;
+  background-image: url('https://cdn.icon-icons.com/icons2/1580/PNG/512/2849824-basket-buy-market-multimedia-shop-shopping-store_107977.png');
+  background-size: 20px;
+  background-position: 5px 5px; 
+  background-repeat: no-repeat;
+}
+
+#product-info{
+  margin: auto;
 }
 
 img {
   height: 8rem;
   width: 10rem;
   padding: 10px;
-  margin: auto;
+  margin: 10px;
+}
+
+body {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVXO0iT7S7vsD24Nw8UT60LDQ-YA6ElqjQQ&s');
+}
+
+#section-l{
+  background-color: rgba(194, 228, 165, 0.971);
+  width: 100%;
 }
 
 .filtro {
   display: none;
 }
 
+button {
+  padding: 8px 15px 8px 30px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+}
 
+#buy-div {
+  justify-items: center;
 
+}
 
+#b-div {
+  justify-items: center;
+}
+
+#shop-div {
+  display: flex;
+}
+
+#market-img {
+  height: 2rem;
+  width: 2rem;
+}
+
+#btn-clear {
+  background-image: url('https://cdn.icon-icons.com/icons2/931/PNG/512/delete_remove_bin_icon-icons.com_72400.png');
+  background-size: 28px;
+  background-repeat: no-repeat;
+}
+#btn-buy {
+  background-image: url('https://cdn.icon-icons.com/icons2/1946/PNG/512/1904674-accept-approved-check-checked-confirm-done-tick_122524.png');
+  background-size: 20px;
+  background-position: 5px 5px; 
+  background-repeat: no-repeat;
+}

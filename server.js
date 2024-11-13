@@ -2,10 +2,10 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const PORT = 3000; // Cambié el puerto a 3000, ya que mencionaste ese puerto.
+const PORT = 3000; 
 
-app.use(cors()); // Permitir CORS para todas las rutas
-app.use(express.json()); // Para poder recibir JSON en las peticiones
+app.use(cors()); 
+app.use(express.json()); 
 
 const products = [
     {
