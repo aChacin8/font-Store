@@ -14,7 +14,7 @@ const products = [
         "precio": 12.50,
         "cantidadDisponible": 150,
         "descripcion": "Manzana roja fresca, excelente para ensaladas o como snack saludable.",
-        "imagen": "https://www.recetasnestle.com.mx/sites/default/files/inline-images/tipos-de-manzana-royal-gala.jpg",
+        "imagen": "https://fricaval89.com/img/productos/camaras/etileno-manzanas.jpg",
         "disponible": true
     },
     {
@@ -41,7 +41,7 @@ const products = [
         "precio": 18.00,
         "cantidadDisponible": 120,
         "descripcion": "Arroz blanco de grano largo, ideal para acompañar cualquier platillo.",
-        "imagen": "https://***",
+        "imagen": "https://cofepasa.com/wp-content/uploads/2021/04/arroz-portal.jpg",
         "disponible": true
     },
     {
@@ -50,7 +50,7 @@ const products = [
         "precio": 50.00,
         "cantidadDisponible": 30,
         "descripcion": "Huevos orgánicos de gallinas de libre pastoreo, fuente natural de proteínas.",
-        "imagen": "https://***",
+        "imagen": "https://thefoodtech.com/wp-content/uploads/2023/10/huevo-828x548.jpg",
         "disponible": false
     },
     {

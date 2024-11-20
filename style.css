@@ -40,13 +40,14 @@ main {
 }
 
 #section-r {
-  width: 65%;
+  width: 100%;
   background-color: rgba(194, 228, 165, 0.53);
 }
 #product-ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin-right: 3rem;
+  margin-top: 3rem;
 }
 
 #product-li {
@@ -73,6 +74,13 @@ input {
   padding: 8px 15px 8px 30px;
 }
 
+#icon-shop{
+  height: 2rem;
+  width: 2rem;
+  float: right;
+  margin: auto;
+  margin-right: 20px;
+}
 
 .btn-shop {
   margin: 20px;
@@ -97,11 +105,6 @@ body {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVXO0iT7S7vsD24Nw8UT60LDQ-YA6ElqjQQ&s');
 }
 
-#section-l{
-  background-color: rgba(194, 228, 165, 0.971);
-  width: 100%;
-}
-
 .filtro {
   display: none;
 }
@@ -117,8 +120,8 @@ button {
 
 }
 
-#b-div {
-  justify-items: center;
+.b-div {
+  justify-self: center;
 }
 
 #shop-div {
