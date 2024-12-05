@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "login/templates/index.html",
+            "use": "@vercel/static-build"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/server.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "login/templates/index.html"
+        }
+    ]
+}
