@@ -6,7 +6,7 @@
             "use": "@vercel/node"
         },
         {
-            "src": "package.json",
+            "src": "login/templates/**",
             "use": "@vercel/static-build"
         }
     ],
