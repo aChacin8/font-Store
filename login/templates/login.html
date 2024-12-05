@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/FRONT-END/punto-venta/prd_page/login/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form method="POST" action="/login">
+            <label for="nombre_usuario">Usuario:</label>
+            <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+            
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+            
+            <button type="submit">Ingresar</button>
+        </form>
+        <a href="./registro.html">¿No tienes cuenta? Regístrate aquí</a>
+    </div>
+</body>
+</html>

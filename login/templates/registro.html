@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Registro</title>
+    <link rel="stylesheet" href="/FRONT-END/punto-venta/prd_page/login/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registro</h2>
+        <form method="POST" action="./registro.html">
+            <label for="nombre_usuario">Usuario:</label>
+            <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+            
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+            
+            <label for="rol">Rol:</label>
+            <select id="rol" name="rol">
+                <option value="usuario">Usuario</option>
+                <option value="almacenista">Almacenista</option>
+                <option value="admin">Administrador</option>
+            </select>
+            
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
