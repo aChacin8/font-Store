@@ -17,9 +17,12 @@
     "cors": "^2.8.5",
     "express": "^4.21.1"
   },
-  "main": "main.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Servidor de punto de venta con APIs y cliente utilizando Vite",
+  "main": "server.js"
 }
