@@ -1,10 +1,10 @@
-const urlApi = "http://localhost:3000/api/products";
+const urlApi = "https://api-server-store-git-main-achacin8s-projects.vercel.app/?vercelToolbarCode=f2pcgXLUeMVuQI-";
 const contentApi = document.querySelector("#content-div");
 const contentFunction = document.querySelector("#store-div");
 const btnCart = document.querySelector("#container-icon");
 const containerPrd = document.querySelector('.container-cart-products');
 
-let productList = JSON.parse(localStorage.getItem("apiData")) || [];
+let productList = JSON.parse(localStorage.getItem('apiData')) || [];
 
 fetch(urlApi)
   .then((response) => {
@@ -41,6 +41,7 @@ fetch(urlApi)
         }
       });
     });
+    collectInfo();
   })
   .catch((error) => {
     console.error("Error al adquirir los productos:", error);
@@ -62,23 +63,80 @@ const addToCart = (product) => {
   }
 };
 
+
+const btnPlus = () => {
+  const btnPlus = document.querySelectorAll (".btn-plus");
+  btnPlus.forEach ((plus)=> {
+    plus.addEventListener ("click", (e) => {
+      const prdId = parseInt (e.target.closest ('.cont-Product').dataset.id); 
+      const existingPrd = productList.find (prd => prd.id === prdId);
+      
+      if (existingPrd){
+        if (existingPrd.cantidadDisponible > 0) {
+          existingPrd.cantidad += 1; 
+          existingPrd.cantidadDisponible -= 1; 
+          localStorage.setItem ("apiData", JSON.stringify(productList));
+          console.log(`Producto modificado = ${existingPrd.nombre}, cantidad = ${existingPrd.cantidad}`);
+        } else {
+          alert (`Producto no disponible, cantidad = ${existingPrd.cantidadDisponible}`);
+        }
+      }else{
+        console.error('Producto no encontrado:', prdId);
+      }
+      
+    });
+  })
+}
+
+const btnMinus = () => {
+  
+  const btnMinus = document.querySelectorAll (".btn-minus");
+  btnMinus.forEach ((minus)=> {
+    minus.addEventListener ("click", (e)=>{
+      const prdId = parseInt(e.target.closest('.cont-Product').dataset.id); 
+      const existingPrd = productList.find (prd => prd.id === prdId);
+
+      if (existingPrd){
+        if (existingPrd.cantidadDisponible > 0) {
+          existingPrd.cantidad -= 1; 
+          existingPrd.cantidadDisponible +=1; 
+          localStorage.setItem("apiData", JSON.stringify(productList));
+          console.log(`Producto modificado = ${existingPrd.nombre}, cantidad = ${existingPrd.cantidad}`);
+          
+        }
+      }else{
+        console.error('Producto no encontrado:', prdId);
+      }
+    })
+  })
+}
+
 const infoProducts = () => {
   contentFunction.innerHTML = '';
   productList.forEach((product, index) => {
+      
     const cardPrd = document.createElement('div');
-    cardPrd.classList.add('card-item');
+    cardPrd.classList.add('cont-Product');
+    cardPrd.dataset.id = product.id
     cardPrd.innerHTML = `
       <div id="buy-div">
           <ul id="content-ul">
             <li id="content-li">
-              <img src="${product.imagen}" alt="${product.nombre}" />
+              <div id= "div-divisor2"><img src="${product.imagen}" alt="${product.nombre}" /></div>
+              <div id= "div-divisor">
               <p id="content-p">Nombre: ${product.nombre}</p>
               <p id="content-p">Precio: ${product.precio}$</p>
-              <p id="content-p">Cantidad: ${product.cantidad}</p>
-              <p id="content-p">Disponibilidad: ${product.cantidadDisponible}</p>
+                <div id="counter">
+                  <p id="content-p">Cantidad:</p>
+                  <button class="btn-minus">-</button>
+                  <p>${product.cantidad}</p>
+                  <button class="btn-plus">+</button>
+                </div>
+              </div>
             </li>
+            <button class="btn-remove" data-index="${index}">Eliminar de Carrito</button>
+
           </ul>
-          <button class="btn-remove" data-index="${index}">Borrar</button>
       </div>`;
       
     contentFunction.appendChild(cardPrd);
@@ -95,6 +153,8 @@ const infoProducts = () => {
   });
 
   addBtns(); 
+  btnPlus(); 
+  btnMinus(); 
 };
 
 const addBtns = () => {
@@ -111,9 +171,11 @@ const addBtns = () => {
 
   containerPrd.appendChild (btns);
 
-  const btnBuy = document.querySelector("#btn-buy");
-  btnBuy.addEventListener("click", (e) => {
-      alert(`Has comprado ${productList.length} productos`);
+  const buy = document.querySelector("#btn-buy");
+  buy.addEventListener("click", (e) => {
+      productList.forEach (product => {
+        btnBuy (product.id); 
+      })
     });
 
   const btnClean = document.querySelector("#btn-clean");
@@ -125,6 +187,42 @@ const addBtns = () => {
   }
 };
 
+const btnBuy = () => {
+  productList.forEach(product => {
+    const productId = product.id;
+    const updatedProduct = {
+      id: productId,
+      cantidad: product.cantidad,
+      cantidadDisponible: product.cantidadDisponible - product.cantidad
+    };
+    
+    fetch(`https://api-server-store-git-main-achacin8s-projects.vercel.app/api/products/${productId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedProduct)
+    })
+    .then((response) => response.json())
+    .then((buyPrd) => {
+      const productIndex = productList.findIndex(prd => prd.id === productId);
+      if (productIndex !== -1){
+        productList[productIndex].cantidadDisponible = buyPrd.product.cantidadDisponible;
+        localStorage.setItem('apiData', JSON.stringify(productList));
+      }
+      console.log(`Compra realizada: ${buyPrd.product.nombre}, cantidad comprada: ${product.cantidad}`);
+    })
+    .catch((error) => {
+      console.error(`Error al comprar el producto: ${error}`);
+    });
+  });
+  
+  alert('Compra realizada con éxito');
+  productList = [];
+  localStorage.setItem('apiData', JSON.stringify(productList));
+  infoProducts(); 
+};
+
 const collectInfo = () => {
   const collectContainer = document.querySelectorAll(".product-li");
   collectContainer.forEach(container => {
@@ -132,12 +230,15 @@ const collectInfo = () => {
       if (e.target.classList.contains("btn-shop")) {
         const product = e.target.parentElement; 
         const infoProduct = {
+          id: parseInt(product.dataset.id),
           cantidad: 1,
           name: product.querySelector('h2').textContent,
-          precio: product.querySelector('h3').textContent
-        }
+          precio: parseFloat(product.querySelector('h3').textContent),
+          cantidadDisponible : parseInt (product.querySelector('#product-info'))
+        };
         productList = [...productList, infoProduct];
-        console.log(productList);
+        localStorage.setItem ('apiData', JSON.stringify(productList));
+        console.log("Localstorage actualizado", productList);
       }
     });
   });
