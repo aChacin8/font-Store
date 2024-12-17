@@ -15,7 +15,7 @@ fetch(urlApi)
     }
   })
   .then((products) => {
-    console.log("Productos recibidos:", products); 
+    console.log("Productos recibidos:", products);
     const prd = products.map((product) => `
       <li id="product-li"> 
         <img src="${product.imagen}" alt="${product.nombre}" />
@@ -33,11 +33,11 @@ fetch(urlApi)
         const collectPrd = products[index];
         if (collectPrd.cantidadDisponible > 0) {
           addToCart(collectPrd);
-          collectPrd.cantidadDisponible -= 1; 
-          localStorage.setItem ("apiData", JSON.stringify(productList));
+          collectPrd.cantidadDisponible -= 1;
+          localStorage.setItem("apiData", JSON.stringify(productList));
           console.log(`Has agregado al carrito ${collectPrd.nombre}`);
         } else {
-          alert (`Producto no disponible, cantidad = ${collectPrd.cantidadDisponible}`)
+          alert(`Producto no disponible, cantidad = ${collectPrd.cantidadDisponible}`)
         }
       });
     });
@@ -48,9 +48,9 @@ fetch(urlApi)
     contentApi.innerHTML = `Error al adquirir los productos: ${error.message}`;
   });
 
-btnCart.addEventListener('click', () => { 
-  containerPrd.classList.toggle('hidden-cart'); 
-  infoProducts(); 
+btnCart.addEventListener('click', () => {
+  containerPrd.classList.toggle('hidden-cart');
+  infoProducts();
 });
 
 const addToCart = (product) => {
@@ -65,46 +65,46 @@ const addToCart = (product) => {
 
 
 const btnPlus = () => {
-  const btnPlus = document.querySelectorAll (".btn-plus");
-  btnPlus.forEach ((plus)=> {
-    plus.addEventListener ("click", (e) => {
-      const prdId = parseInt (e.target.closest ('.cont-Product').dataset.id); 
-      const existingPrd = productList.find (prd => prd.id === prdId);
-      
-      if (existingPrd){
+  const btnPlus = document.querySelectorAll(".btn-plus");
+  btnPlus.forEach((plus) => {
+    plus.addEventListener("click", (e) => {
+      const prdId = parseInt(e.target.closest('.cont-Product').dataset.id);
+      const existingPrd = productList.find(prd => prd.id === prdId);
+
+      if (existingPrd) {
         if (existingPrd.cantidadDisponible > 0) {
-          existingPrd.cantidad += 1; 
-          existingPrd.cantidadDisponible -= 1; 
-          localStorage.setItem ("apiData", JSON.stringify(productList));
+          existingPrd.cantidad += 1;
+          existingPrd.cantidadDisponible -= 1;
+          localStorage.setItem("apiData", JSON.stringify(productList));
           console.log(`Producto modificado = ${existingPrd.nombre}, cantidad = ${existingPrd.cantidad}`);
         } else {
-          alert (`Producto no disponible, cantidad = ${existingPrd.cantidadDisponible}`);
+          alert(`Producto no disponible, cantidad = ${existingPrd.cantidadDisponible}`);
         }
-      }else{
+      } else {
         console.error('Producto no encontrado:', prdId);
       }
-      
+
     });
   })
 }
 
 const btnMinus = () => {
-  
-  const btnMinus = document.querySelectorAll (".btn-minus");
-  btnMinus.forEach ((minus)=> {
-    minus.addEventListener ("click", (e)=>{
-      const prdId = parseInt(e.target.closest('.cont-Product').dataset.id); 
-      const existingPrd = productList.find (prd => prd.id === prdId);
 
-      if (existingPrd){
+  const btnMinus = document.querySelectorAll(".btn-minus");
+  btnMinus.forEach((minus) => {
+    minus.addEventListener("click", (e) => {
+      const prdId = parseInt(e.target.closest('.cont-Product').dataset.id);
+      const existingPrd = productList.find(prd => prd.id === prdId);
+
+      if (existingPrd) {
         if (existingPrd.cantidadDisponible > 0) {
-          existingPrd.cantidad -= 1; 
-          existingPrd.cantidadDisponible +=1; 
+          existingPrd.cantidad -= 1;
+          existingPrd.cantidadDisponible += 1;
           localStorage.setItem("apiData", JSON.stringify(productList));
           console.log(`Producto modificado = ${existingPrd.nombre}, cantidad = ${existingPrd.cantidad}`);
-          
+
         }
-      }else{
+      } else {
         console.error('Producto no encontrado:', prdId);
       }
     })
@@ -114,7 +114,7 @@ const btnMinus = () => {
 const infoProducts = () => {
   contentFunction.innerHTML = '';
   productList.forEach((product, index) => {
-      
+
     const cardPrd = document.createElement('div');
     cardPrd.classList.add('cont-Product');
     cardPrd.dataset.id = product.id
@@ -138,47 +138,47 @@ const infoProducts = () => {
 
           </ul>
       </div>`;
-      
+
     contentFunction.appendChild(cardPrd);
   });
 
   const btnRemove = document.querySelectorAll(".btn-remove");
   btnRemove.forEach(btn => {
     btn.addEventListener("click", (e) => {
-      const index = e.target.dataset.index; 
+      const index = e.target.dataset.index;
       productList.splice(index, 1);
       localStorage.setItem('apiData', JSON.stringify(productList));
       infoProducts();
     });
   });
 
-  addBtns(); 
-  btnPlus(); 
-  btnMinus(); 
+  addBtns();
+  btnPlus();
+  btnMinus();
 };
 
 const addBtns = () => {
   let existingBtns = document.querySelector(".b-div");
 
-  if (!existingBtns){
-  const btns = document.createElement ('div');
-  btns.classList.add ('b-div');
-  
-  btns.innerHTML = `
+  if (!existingBtns) {
+    const btns = document.createElement('div');
+    btns.classList.add('b-div');
+
+    btns.innerHTML = `
     <button id="btn-buy">Comprar</button>
     <button id="btn-clean">Vaciar Carrito</button>
   `;
 
-  containerPrd.appendChild (btns);
+    containerPrd.appendChild(btns);
 
-  const buy = document.querySelector("#btn-buy");
-  buy.addEventListener("click", (e) => {
-      productList.forEach (product => {
-        btnBuy (product.id); 
+    const buy = document.querySelector("#btn-buy");
+    buy.addEventListener("click", (e) => {
+      productList.forEach(product => {
+        btnBuy(product.id);
       })
     });
 
-  const btnClean = document.querySelector("#btn-clean");
+    const btnClean = document.querySelector("#btn-clean");
     btnClean.addEventListener("click", () => {
       productList = [];
       localStorage.setItem('apiData', JSON.stringify(productList));
@@ -195,7 +195,7 @@ const btnBuy = () => {
       cantidad: product.cantidad,
       cantidadDisponible: product.cantidadDisponible - product.cantidad
     };
-    
+
     fetch(`https://api-server-store-git-main-achacin8s-projects.vercel.app/api/products/${productId}`, {
       method: 'PUT',
       headers: {
@@ -203,24 +203,24 @@ const btnBuy = () => {
       },
       body: JSON.stringify(updatedProduct)
     })
-    .then((response) => response.json())
-    .then((buyPrd) => {
-      const productIndex = productList.findIndex(prd => prd.id === productId);
-      if (productIndex !== -1){
-        productList[productIndex].cantidadDisponible = buyPrd.product.cantidadDisponible;
-        localStorage.setItem('apiData', JSON.stringify(productList));
-      }
-      console.log(`Compra realizada: ${buyPrd.product.nombre}, cantidad comprada: ${product.cantidad}`);
-    })
-    .catch((error) => {
-      console.error(`Error al comprar el producto: ${error}`);
-    });
+      .then((response) => response.json())
+      .then((buyPrd) => {
+        const productIndex = productList.findIndex(prd => prd.id === productId);
+        if (productIndex !== -1) {
+          productList[productIndex].cantidadDisponible = buyPrd.product.cantidadDisponible;
+          localStorage.setItem('apiData', JSON.stringify(productList));
+        }
+        console.log(`Compra realizada: ${buyPrd.product.nombre}, cantidad comprada: ${product.cantidad}`);
+      })
+      .catch((error) => {
+        console.error(`Error al comprar el producto: ${error}`);
+      });
   });
-  
+
   alert('Compra realizada con éxito');
   productList = [];
   localStorage.setItem('apiData', JSON.stringify(productList));
-  infoProducts(); 
+  infoProducts();
 };
 
 const collectInfo = () => {
@@ -228,16 +228,16 @@ const collectInfo = () => {
   collectContainer.forEach(container => {
     container.addEventListener("click", (e) => {
       if (e.target.classList.contains("btn-shop")) {
-        const product = e.target.parentElement; 
+        const product = e.target.parentElement;
         const infoProduct = {
           id: parseInt(product.dataset.id),
           cantidad: 1,
           name: product.querySelector('h2').textContent,
           precio: parseFloat(product.querySelector('h3').textContent),
-          cantidadDisponible : parseInt (product.querySelector('#product-info'))
+          cantidadDisponible: parseInt(product.querySelector('#product-info'))
         };
         productList = [...productList, infoProduct];
-        localStorage.setItem ('apiData', JSON.stringify(productList));
+        localStorage.setItem('apiData', JSON.stringify(productList));
         console.log("Localstorage actualizado", productList);
       }
     });
@@ -245,8 +245,8 @@ const collectInfo = () => {
 };
 
 document.addEventListener('keyup', e => {
-  if (e.target.matches('#search-prd')) {  
-    let searchValue = e.target.value.toLowerCase().trim(); 
+  if (e.target.matches('#search-prd')) {
+    let searchValue = e.target.value.toLowerCase().trim();
     document.querySelectorAll('#product-li').forEach(prd => {
       if (prd.textContent.toLowerCase().includes(searchValue)) {
         prd.style.display = "block";
@@ -257,66 +257,3 @@ document.addEventListener('keyup', e => {
   }
 });
 
-// const adminInfo = () => {
-//   productList.forEach((product, index) => {
-//   `<li id="li-admin">
-//             <div id= "div-admin">
-//                 <h1 id="h1-admin">${product.nombre}</h1>
-//                 <img src="${product.imagen}" alt="${product.nombre} id= "img-admin">
-//             </div>           
-//             <div id= "div-admin2">
-//                 <p id="p-admin">Descripcion: <br></br>${product.descripcion}</p>
-//                 <p id="p-admin">Cantidad Disponible: ${product.cantidadDisponible}</p>
-//             </div>
-//         </li>`).join ("");
-
-
-//     infoProduct.innerHTML = `<ul id="ul-admin">${prd}</ul>`;
-  
-//   }
-  
-//   }
-
-// document.addEventListener('keyup', e => {
-//   if (e.target.matches('#search-prd')) {  
-//     let searchValue = e.target.value.toLowerCase().trim(); 
-//     document.querySelectorAll('#product-li').forEach(prd => {
-//       if (prd.textContent.toLowerCase().includes(searchValue)) {
-//         prd.style.display = "block";
-//       } else {
-//         prd.style.display = "none";
-//       }
-//     });
-//   }
-// });
-
-// const adminInfo = () => {
-//   const infoProduct = document.querySelector('#div-info');
-//   const products = JSON.parse(localStorage.getItem('apiData')) || [];
-  
-//   const prd = products.map((product) => 
-//     `<li id="li-admin">
-//       <div id="div-admin">
-//         <h1 id="h1-admin">${product.nombre}</h1>
-//         <img src="${product.imagen}" alt="${product.nombre}" id="img-admin">
-//       </div>           
-//       <div id="div-admin2">
-//         <p id="p-admin">Descripcion: <br>${product.descripcion}</p>
-//         <p id="p-admin">Cantidad Disponible: ${product.cantidadDisponible}</p>
-//       </div>
-//     </li>`
-//   ).join("");
-
-//   infoProduct.innerHTML = `<ul id="ul-admin">${prd}</ul>`;
-// };
-
-// const cerrarSesion = () => {
-//   window.location.href = "login.html";
-// };
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   infoProducts();
-//   btnPlus();
-//   btnMinus();
-//   adminInfo();
-// });
