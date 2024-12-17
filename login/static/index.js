@@ -19,3 +19,16 @@ fetch (urlApi)
     infoProduct.innerHTML = `Error al adquirir los productos: ${error.message}`;
 
 });
+
+document.addEventListener('keyup', e => {
+    if (e.target.matches('#search-prd')) {
+        let searchValue = e.target.value.toLowerCase().trim();
+        document.querySelectorAll('#li-info').forEach(prd => {
+            if (prd.textContent.toLowerCase().includes(searchValue)) {
+                prd.style.display = "block";
+            } else {
+                prd.style.display = "none";
+            }
+    });
+    }
+});

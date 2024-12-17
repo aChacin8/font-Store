@@ -5,25 +5,19 @@
     <title>Registro</title>
     <link rel="stylesheet" href="../static/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script defer src="/FRONT-END/punto-venta/prd_page/login/static/log.js"></script>
 </head>
 <body>
     <div class="container">
         <h2>Registro</h2>
-        <form method="POST" action="./registro.html">
-            <label for="nombre_usuario">Usuario:</label>
-            <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+        <form id="registro-form">
+            <label for="username">Usuario:</label>
+            <input type="email" id="input-username" name="username" required>
             
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" id="contraseña" name="contraseña" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="i-password" name="password" required>
             
-            <label for="rol">Rol:</label>
-            <select id="rol" name="rol">
-                <option value="usuario">Usuario</option>
-                <option value="almacenista">Almacenista</option>
-                <option value="admin">Administrador</option>
-            </select>
-            
-            <button type="submit">Registrar</button>
+            <button type="submit" id="submit-reg">Registrar</button>
         </form>
     </div>
 </body>
