@@ -1,8 +1,5 @@
-node_modules/
-!.gitignore
-
 # Logs
-logs/
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -10,16 +7,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Directorios de compilación
-dist/
-dist-ssr/
+node_modules
+dist
+dist-ssr
 *.local
-login/
+honey
 
-# Archivos y directorios de editores
-.vscode/
+# Editor directories and files
+.vscode/*
 !.vscode/extensions.json
-.idea/
+.idea
 .DS_Store
 *.suo
 *.ntvs*
@@ -27,9 +24,15 @@ login/
 *.sln
 *.sw?
 
-# Archivos Python específicos
-*.pyc
-banco.py
+
+
+node_modules
+javascript.svg
+
+s.pyc
+banco.py 
 cifrado.py
 threading.py
+app.py
 
+.gitignore
