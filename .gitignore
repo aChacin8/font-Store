@@ -7,7 +7,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
 dist
 dist-ssr
 *.local
@@ -24,15 +23,11 @@ honey
 *.sln
 *.sw?
 
-
-
-node_modules
-javascript.svg
-
 s.pyc
 banco.py 
 cifrado.py
 threading.py
-app.py
 
+node_modules
 .gitignore
+
