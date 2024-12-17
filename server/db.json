@@ -1,0 +1,184 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "nombre": "Manzana Roja",
+            "precio": 12.50,
+            "cantidadDisponible": 150,
+            "descripcion": "Manzana roja fresca, excelente para ensaladas o como snack saludable.",
+            "imagen": "data:image/jpeg;base64,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",
+            "disponible": true
+        },
+        {
+            "id": 2,
+            "nombre": "Leche Deslactosada 1L",
+            "precio": 22.00,
+            "cantidadDisponible": 85,
+            "descripcion": "Leche deslactosada baja en grasa, ideal para personas intolerantes a la lactosa.",
+            "imagen": "https://s2.abcstatics.com/media/bienestar/2020/07/09/leche-fucha-kqoG--1248x698@abc.jpg",
+            "disponible": true
+        },
+        {
+            "id": 3,
+            "nombre": "Pan Integral",
+            "precio": 35.00,
+            "cantidadDisponible": 40,
+            "descripcion": "Pan integral alto en fibra, perfecto para un desayuno saludable.",
+            "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3n1stOpTv1owZL3ubDM-jRmepDJsm6sIsJA&s",
+            "disponible": true
+        },
+        {
+            "id": 4,
+            "nombre": "Arroz Blanco 1kg",
+            "precio": 18.00,
+            "cantidadDisponible": 120,
+            "descripcion": "Arroz blanco de grano largo, ideal para acompañar cualquier platillo.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 5,
+            "nombre": "Huevos Orgánicos (12 piezas)",
+            "precio": 50.00,
+            "cantidadDisponible": 30,
+            "descripcion": "Huevos orgánicos de gallinas de libre pastoreo, fuente natural de proteínas.",
+            "imagen": "https://***",
+            "disponible": false
+        },
+        {
+            "id": 6,
+            "nombre": "Pasta Fusilli 500g",
+            "precio": 25.00,
+            "cantidadDisponible": 200,
+            "descripcion": "Pasta fusilli de trigo duro, ideal para salsas y ensaladas.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 7,
+            "nombre": "Cereal Integral 750g",
+            "precio": 65.00,
+            "cantidadDisponible": 50,
+            "descripcion": "Cereal integral alto en fibra, ideal para un desayuno completo.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 8,
+            "nombre": "Aceite de Oliva Extra Virgen 500ml",
+            "precio": 85.00,
+            "cantidadDisponible": 75,
+            "descripcion": "Aceite de oliva extra virgen de primera presión en frío.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 9,
+            "nombre": "Pechuga de Pollo 1kg",
+            "precio": 120.00,
+            "cantidadDisponible": 60,
+            "descripcion": "Pechuga de pollo fresca, lista para cocinar.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 10,
+            "nombre": "Jugo de Naranja 1L",
+            "precio": 30.00,
+            "cantidadDisponible": 90,
+            "descripcion": "Jugo de naranja 100% natural, sin azúcar añadida.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 11,
+            "nombre": "Galletas de Avena 300g",
+            "precio": 40.00,
+            "cantidadDisponible": 110,
+            "descripcion": "Galletas crujientes de avena con pasas, ideales para snack.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 12,
+            "nombre": "Yogurt Natural 1kg",
+            "precio": 70.00,
+            "cantidadDisponible": 50,
+            "descripcion": "Yogurt natural sin azúcares añadidos, perfecto para desayunos.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 13,
+            "nombre": "Café Molido 250g",
+            "precio": 95.00,
+            "cantidadDisponible": 80,
+            "descripcion": "Café molido 100% arábica, de sabor intenso.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 14,
+            "nombre": "Azúcar Morena 1kg",
+            "precio": 28.00,
+            "cantidadDisponible": 140,
+            "descripcion": "Azúcar morena sin refinar, perfecta para endulzar de forma natural.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 15,
+            "nombre": "Té Verde 20 sobres",
+            "precio": 45.00,
+            "cantidadDisponible": 130,
+            "descripcion": "Té verde natural en sobres, antioxidante.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 16,
+            "nombre": "Zanahorias 1kg",
+            "precio": 15.00,
+            "cantidadDisponible": 95,
+            "descripcion": "Zanahorias frescas y crujientes, perfectas para ensaladas o guarniciones.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 17,
+            "nombre": "Aguacate Hass 1kg",
+            "precio": 60.00,
+            "cantidadDisponible": 70,
+            "descripcion": "Aguacate Hass maduro, ideal para guacamole o acompañar tus comidas.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 18,
+            "nombre": "Miel de Abeja 500g",
+            "precio": 90.00,
+            "cantidadDisponible": 45,
+            "descripcion": "Miel de abeja 100% pura, sin aditivos.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 19,
+            "nombre": "Queso Panela 400g",
+            "precio": 55.00,
+            "cantidadDisponible": 60,
+            "descripcion": "Queso panela fresco, bajo en grasas y delicioso.",
+            "imagen": "https://***",
+            "disponible": true
+        },
+        {
+            "id": 20,
+            "nombre": "Salsa de Tomate 400g",
+            "precio": 22.00,
+            "cantidadDisponible": 150,
+            "descripcion": "Salsa de tomate lista para usar en pastas o pizzas.",
+            "imagen": "https://***",
+            "disponible": true
+        }
+    ]
+}
