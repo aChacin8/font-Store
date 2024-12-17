@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesion: UvMarket</title>
+    <link rel="icon" href="../static/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../static/log.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form id="form-login">
+            <label for="username">Usuario:</label>
+            <input type="text" id="input-user" name="username" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="input-pswd" name="password" required>
+            
+            <label for="rol">Rol:</label>
+            <select name="rol" id="input-rol">
+                <option value="user">Usuario</option>
+                <option value="admin">Administrador</option>
+            </select>
+            <button type="submit" id="submit-log">Ingresar</button>
+        </form>
+        <a href="./registro.html">¿No tienes cuenta? Regístrate aquí</a>
+    </div>
+</body>
+</html>
