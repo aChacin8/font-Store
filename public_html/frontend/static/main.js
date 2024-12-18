@@ -122,7 +122,7 @@ const infoProducts = () => {
       <div id="buy-div">
           <ul id="content-ul">
             <li id="content-li">
-              <div id= "div-divisor2"><img src="${product.imagen}" alt="${product.nombre}" /></div>
+              <div id= "div-divisor2"><img src="${product.imagen}" alt="${product.nombre}" id ="content-img" ></div>
               <div id= "div-divisor">
               <p id="content-p">Nombre: ${product.nombre}</p>
               <p id="content-p">Precio: ${product.precio}$</p>

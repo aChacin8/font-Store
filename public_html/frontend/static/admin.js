@@ -26,7 +26,7 @@ fetch (urlApi)
 });
 
 document.addEventListener('keyup', e => {
-    if (e.target.matches('#search-admin')) {
+    if (e.target.matches('#search-prd')) {
         let searchValue = e.target.value.toLowerCase().trim();
         document.querySelectorAll('#li-admin').forEach(prd => {
             if (prd.textContent.toLowerCase().includes(searchValue)) {

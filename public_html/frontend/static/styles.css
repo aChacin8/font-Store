@@ -6,16 +6,16 @@ body, h1, h2, h3, p, ul, li, a, input, button {
 
 body {
     font-family: "Roboto Condensed", sans-serif;
-    background: linear-gradient(135deg, #2d3436, #636e72);
+    background-color: #404a51;
     color: #ecf0f1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 40rem;
     margin: 0;
 }
 
-.container {
+#container {
     background: #2c3e50;
     padding: 20px;
     border-radius: 10px;
@@ -23,8 +23,6 @@ body {
     width: 100%;
     max-width: 500px;
     text-align: center;
-    overflow-y: auto;
-    max-height: 90vh;
 }
 
 h1, h2 {
@@ -138,3 +136,4 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+

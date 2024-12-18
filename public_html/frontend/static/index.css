@@ -40,7 +40,6 @@ main {
 }
 
 header {
-    justify-content: space-between;
     align-items: center;
     background-color: rgba(114, 37, 37, 0.9);
 }
@@ -58,6 +57,7 @@ header {
     font-size: 14px;
     color: rgb(255, 255, 255);
     margin-right: 1rem ;
+
 }
 
 #h1-title {
@@ -74,4 +74,142 @@ header {
 #login-a {
     text-decoration:underline;
     color:  rgba(255, 255, 255, 0.9);
+}
+
+#reg-a{
+    margin-top: 1.5rem;
+}
+
+#nav-a {
+    display: flex;
+}
+
+@media only screen and (max-width: 768px){
+    body {
+        background-color: rgba(39, 39, 46, 0.9);
+    }
+    
+    header{
+        width: 38rem;
+        margin-bottom: 20px;
+        padding: 5rem;
+        flex-direction: column;
+        background-color: rgba(62, 62, 73, 0.9);
+    }
+
+    #nav-prd {
+        margin: auto;
+    }
+
+    input {
+        padding: 12px 20px 12px 250px;
+        text-align: center;
+        background-size: 2rem;
+        font-size: 1.5rem;
+        justify-items: center;
+    }
+
+    #h1-title{
+        width: 40rem;
+        font-size: 2rem;
+        margin-left: 2rem;
+        text-align: center;
+        background-color: rgba(62, 62, 73, 0.9);
+    }
+
+    #log-a {
+        margin-right: 0;
+        margin-left: 0;
+        font-size: 1.3rem;
+    }
+
+    #reg-a {
+        margin-right: 0;
+        margin-left: 0;
+        font-size: 1.3rem;
+    }
+    #nav-a {
+        margin-bottom: 1rem;
+        padding: 10px 1px 10px;
+        padding-left: 5px;
+        width: 40rem;
+        background-color: brown;
+        text-align: center;
+    }
+    main {
+        width: 40rem;
+        align-items: center;
+        margin-left: 3.8rem;
+        margin-top: 5rem; 
+        padding-right: 2px; 
+    }
+
+    #p-description {
+        font-size: 1.5rem;
+    }
+    
+    #ul-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #li-info{
+        width: 9rem;
+    }
+
+    #p-info{
+        font-size: 1rem ;
+    }
+
+    img {
+        width: 8rem;
+        height: 8rem;
+    }
+/* ---------------------------------------------------------- */
+    #icon-shop  {
+        height: 3rem;
+        width: 3rem;
+    }    
+
+    #product-ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        float: left;
+    }
+
+    #product-li{
+        width: 8.5rem;
+    }
+
+    #btn-out {
+        width: 100%;
+        background-color: #2c3e50;
+        font-size: 1.3rem;
+    }
+
+/* ----------------------------------------------------- */
+
+    #content-ul {
+        width: 50%;
+        height: 15rem;
+    }
+/* ------------------------------------------------------ */
+
+    #ul-admin {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #li-admin {
+        width: 10rem;
+        margin: 1rem;
+        height: 25rem;
+
+    }
+
+    #div-admin {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
